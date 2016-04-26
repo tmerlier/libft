@@ -1,7 +1,7 @@
 # Libft
 My own library of useful functions in C.
 
-# Functions list
+# Function list
 
 - memset  [(voir man)](http://linux.die.net/man/3/memset)
 - bzero   [(voir man)](http://linux.die.net/man/3/bzero)
