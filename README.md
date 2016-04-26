@@ -54,6 +54,12 @@ My own library of useful functions in C.
 - isprint
 - toupper
 - tolower
+- [lstnew] (#ft_lstnew)
+- [lstdelone] (#ft_lstdelone)
+- [lstdel] (#ft_lstdel)
+- [lstadd] (#ft_lstadd)
+- [lstiter] (#ft_lstiter)
+- [ft_lstmap] (#ft_lstmap)
 
 # Details
 
@@ -294,3 +300,67 @@ My own library of useful functions in C.
 | Param. #1      	| L’entier à écrire. |
 | Retour         	| Rien. |
 | Fonctions libc 	| write(2)	|
+
+----------
+
+| Function       	|  <a name="ft_lstnew">ft_lstnew</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| t_list * ft_lstnew(void const *content, size_t content_size); |
+| Description    	| Alloue (avec malloc(3)) et retourne un maillon “frais”. Les champs content et content_size du nouveau maillon sont initialisés par copie des paramètres de la fonction. Si le paramètre content est nul, le champs content est initialisé à NULL et le champs content_size est initialisé à 0 quelque soit la valeur du paramètre content_size. Le champ next est initialisé à NULL. Si l’allocation échoue, la fonction renvoie NULL. |
+| Param. #1      	| Le contenu à ajouter au nouveau maillon. |
+| Param. #2      	| La taille du contenu à ajouter au nouveau maillon. |
+| Retour         	| Le nouveau maillon. |
+| Fonctions libc 	| malloc(3), free(3)	|
+
+----------
+
+| Function       	|  <a name="ft_lstdelone">ft_lstdelone</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| void ft_lstdelone(t_list **alst, void (*del)(void *, size_t)); |
+| Description    	| Prend en paramètre l’adresse d’un pointeur sur un maillon et libère la mémoire du contenu de ce maillon avec la fonction del passée en paramètre puis libère la mémoire du maillon en lui même avec free(3). La mémoire du champ next ne doit en aucun cas être libérée. Pour terminer, le pointeur sur le maillon maintenant libéré doit être mis à NULL (de manière similaire à la fonction ft_memdel de la partie obligatoire). |
+| Param. #1      	| L’adresse d’un pointeur sur le maillon à libérer. |
+| Retour         	| Rien. |
+| Fonctions libc 	| free(3)	|
+
+----------
+
+| Function       	|  <a name="ft_lstdel">ft_lstdel</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| void ft_lstdel(t_list **alst, void (*del)(void *, size_t)); |
+| Description    	| Prend en paramètre l’adresse d’un pointeur sur un maillon et libère la mémoire de ce maillon et celle de tous ses successeurs l’un après l’autre avec del et free(3). Pour terminer, le pointeur sur le premier maillon maintenant libéré doit être mis à NULL (de manière similaire à la fonction ft_memdel de la partie obligatoire). |
+| Param. #1      	| L’adresse d’un pointeur sur le premier maillon d’une liste à libérer. |
+| Retour         	| Rien. |
+| Fonctions libc 	| free(3)	|
+
+----------
+
+| Function       	|  <a name="ft_lstadd">ft_lstadd</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| void ft_lstadd(t_list **alst, t_list *new); |
+| Description    	| Ajoute l’élément new en tête de la liste. |
+| Param. #1      	| L’adresse d’un pointeur sur le premier maillon d’une liste. |
+| Param. #2      	| Le maillon à ajouter en tête de cette liste. |
+| Retour         	| Rien. |
+| Fonctions libc 	| Aucune.  |
+
+----------
+
+| Function       	|  <a name="ft_lstiter">ft_lstiter</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| void ft_lstiter(t_list *lst, void (*f)(t_list *elem)); |
+| Description    	| Parcourt la liste lst en appliquant à chaque maillon la fonction f. |
+| Param. #1      	| Pointeur sur le premier maillon d’une liste. |
+| Param. #2      	| L’adresse d’une fonction à laquelle appliquer chaque maillon de la liste. |
+| Retour         	| Rien. |
+| Fonctions libc 	| Aucune.  |
+
+----------
+
+| Function       	|  <a name="ft_lstmap">ft_lstmap</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| t_list * ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem)); |
+| Description    	| Parcourt la liste lst en appliquant à chaque maillon la fonction f et crée une nouvelle liste “fraiche” avec malloc(3) résultant des applications successives. Si une allocation échoue, la fonction renvoie NULL. |
+| Param. #1      	| Pointeur sur le premier maillon d’une liste. |
+| Param. #2      	| L’adresse d’une fonction à appliquer à chaque maillon de la liste pour crér une nouvelle liste. |
+| Retour         	| La nouvelle liste. |
+| Fonctions libc 	| malloc(3), free(3).  |
