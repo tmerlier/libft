@@ -40,7 +40,13 @@ My own library of useful functions in C.
 - [itoa] (#ft_itoa)
 - atoi
 - [putchar] (#ft_putchar)
+- [putchar_fd] (#ft_putchar_fd)
 - [putstr] (#ft_putstr)
+- [putstr_fd] (#ft_putstr_fd)
+- [putendl] (#ft_putendl)
+- [putendl_fd] (#ft_putendl_fd)
+- [putnbr] (#ft_putnbr)
+- [putnbr_fd] (#ft_putnbr_fd)
 - isalpha
 - isdigit
 - isalnum
@@ -226,5 +232,65 @@ My own library of useful functions in C.
 | Prototype      	| void ft_putstr(char const *s); |
 | Description    	| Affiche la chaine s sur la sortie standard. |
 | Param. #1      	| La chaine de caractères à afficher. |
+| Retour         	| Rien. |
+| Fonctions libc 	| write(2)	|
+
+----------
+
+| Function       	|  <a name="ft_putendl">ft_putendl</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| void ft_putendl(char const *s); |
+| Description    	| Affiche la chaine s sur la sortie standard suivi d’un ’\n’. |
+| Param. #1      	| La chaine de caractères à afficher. |
+| Retour         	| Rien. |
+| Fonctions libc 	| write(2)	|
+
+----------
+
+| Function       	|  <a name="ft_putnbr">ft_putnbr</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| void ft_putnbr(int n); |
+| Description    	| Affiche l’entier n sur la sortie standard. |
+| Param. #1      	| L’entier à afficher. |
+| Retour         	| Rien. |
+| Fonctions libc 	| write(2)	|
+
+----------
+
+| Function       	|  <a name="ft_putchar_fd">ft_putchar_fd</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| void ft_putchar_fd(char c, int fd); |
+| Description    	| Ecrit le caractère c sur le descripteur de fichier fd. |
+| Param. #1      	| Le caractères à écrire. |
+| Retour         	| Rien. |
+| Fonctions libc 	| write(2)	|
+
+----------
+
+| Function       	|  <a name="ft_putstr_fd">ft_putstr_fd</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| void ft_putstr_fd(char const *s, int fd); |
+| Description    	| Ecrit la chaine s sur le descripteur de fichier fd. |
+| Param. #1      	| La chaine de caractères à écrire. |
+| Retour         	| Rien. |
+| Fonctions libc 	| write(2)	|
+
+----------
+
+| Function       	|  <a name="ft_putendl_fd">ft_putendl_fd</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| void ft_putendl_fd(char const *s, int fd); |
+| Description    	| Ecrit la chaine s sur le descripteur de fichier fd suivi d’un ’\n’. |
+| Param. #1      	| La chaine de caractères à écrire. |
+| Retour         	| Rien. |
+| Fonctions libc 	| write(2)	|
+
+----------
+
+| Function       	|  <a name="ft_putnbr_fd">ft_putnbr_fd</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| void ft_putnbr_fd(int n, int fd); |
+| Description    	| Ecrit l’entier n sur le descripteur de fichier fd. |
+| Param. #1      	| L’entier à écrire. |
 | Retour         	| Rien. |
 | Fonctions libc 	| write(2)	|
