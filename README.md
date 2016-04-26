@@ -3,33 +3,33 @@ My own library of useful functions in C.
 
 # Functions list
 
-- memset
-- bzero
-- memcpy
-- memccpy
-- memmove
+- memset  [(voir man)](http://linux.die.net/man/3/memset)
+- bzero   [(voir man)](http://linux.die.net/man/3/bzero)
+- memcpy  [(voir man)](http://linux.die.net/man/3/memcpy)
+- memccpy [(voir man)](http://linux.die.net/man/3/memccpy)
+- memmove [(voir man)](http://linux.die.net/man/3/memmove)
 - [memalloc] (#ft_memalloc)
 - [memdel] (#ft_memdel)
-- memchr
-- memcmp
+- memchr  [(voir man)](http://linux.die.net/man/3/memchr)
+- memcmp  [(voir man)](http://linux.die.net/man/3/memcmp)
 - [strdel] (#ft_strdel)
-- strlen
-- strdup
+- strlen  [(voir man)](http://linux.die.net/man/3/strlen)
+- strdup  [(voir man)](http://linux.die.net/man/3/strdup)
 - [strclr] (#ft_strclr)
-- strcpy
-- strncpy
-- strcat
-- strncat
-- strlcat
+- strcpy  [(voir man)](http://linux.die.net/man/3/strcpy)
+- strncpy [(voir man)](http://linux.die.net/man/3/strncpy)
+- strcat  [(voir man)](http://linux.die.net/man/3/strcat)
+- strncat [(voir man)](http://linux.die.net/man/3/strncat)
+- strlcat [(voir man)](http://linux.die.net/man/3/strlcat)
 - [strnew] (#ft_strnew)
-- strchr
-- strrchr
+- strchr  [(voir man)](http://linux.die.net/man/3/strchr)
+- strrchr [(voir man)](http://linux.die.net/man/3/strrchr)
 - [striter] (#ft_striter)
 - [striteri] (#ft_striteri)
-- strstr
-- strnstr
-- strcmp
-- strncmp
+- strstr  [(voir man)](http://linux.die.net/man/3/strstr)
+- strnstr [(voir man)](http://www.freebsd.org/cgi/man.cgi?query=strnstr&sektion=3)
+- strcmp  [(voir man)](http://linux.die.net/man/3/strcmp)
+- strncmp [(voir man)](http://linux.die.net/man/3/strncmp)
 - [strmap] (#ft_strmap)
 - [strmapi] (#ft_strmapi)
 - [strnequ] (#ft_strnequ)
@@ -38,7 +38,7 @@ My own library of useful functions in C.
 - [strtrim] (#ft_strtrim)
 - [strsplit] (#ft_strsplit)
 - [itoa] (#ft_itoa)
-- atoi
+- atoi    [(voir man)](http://linux.die.net/man/3/atoi)
 - [putchar] (#ft_putchar)
 - [putchar_fd] (#ft_putchar_fd)
 - [putstr] (#ft_putstr)
@@ -47,13 +47,13 @@ My own library of useful functions in C.
 - [putendl_fd] (#ft_putendl_fd)
 - [putnbr] (#ft_putnbr)
 - [putnbr_fd] (#ft_putnbr_fd)
-- isalpha
-- isdigit
-- isalnum
-- isascii
-- isprint
-- toupper
-- tolower
+- isalpha [(voir man)](http://linux.die.net/man/3/isalpha)
+- isdigit [(voir man)](http://linux.die.net/man/3/isdigit)
+- isalnum [(voir man)](http://linux.die.net/man/3/isalnum)
+- isascii [(voir man)](http://linux.die.net/man/3/isascii)
+- isprint [(voir man)](http://linux.die.net/man/3/isprint)
+- toupper [(voir man)](http://linux.die.net/man/3/toupper)
+- tolower [(voir man)](http://linux.die.net/man/3/tolower)
 - [lstnew] (#ft_lstnew)
 - [lstdelone] (#ft_lstdelone)
 - [lstdel] (#ft_lstdel)
@@ -62,6 +62,7 @@ My own library of useful functions in C.
 - [ft_lstmap] (#ft_lstmap)
 
 # Details
+
 
 | Function       	|  <a name="ft_memalloc">ft_memalloc</a> 	|
 |----------------	|---------------------------------------	|
