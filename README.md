@@ -1,7 +1,21 @@
 # Libft
 My own library of useful functions in C.
 
-# Function list
+# Summary
+ 1. [Makefile](#makefile)
+ 2. [Function list](#function-list)
+ 3. [Details](#details)
+
+# <a name="makefile">Makefile</a>
+
+| Commande       	|  Actions 	|
+|----------------	|----------	|
+| `make`      	  | Compile les .c et créer libft.a  	|
+| `make clean`    | Supprime les .o.  	|
+| `make flcean`  	| Supprime les .o et libft.a.  	|
+| `make re`     	| Exécute fclean et make.  	|
+
+# <a name="function-list">Function list</a>
 
 - memset  [(voir man)](http://linux.die.net/man/3/memset)
 - bzero   [(voir man)](http://linux.die.net/man/3/bzero)
@@ -61,7 +75,8 @@ My own library of useful functions in C.
 - [lstiter] (#ft_lstiter)
 - [ft_lstmap] (#ft_lstmap)
 
-# Details
+
+# <a name="details">Details<a/>
 
 
 | Function       	|  <a name="ft_memalloc">ft_memalloc</a> 	|
