@@ -36,7 +36,11 @@ My own library of useful functions in C.
 - [strsub] (#ft_strsub)
 - [strjoin] (#ft_strjoin)
 - [strtrim] (#ft_strtrim)
+- [strsplit] (#ft_strsplit)
+- [itoa] (#ft_itoa)
 - atoi
+- [putchar] (#ft_putchar)
+- [putstr] (#ft_putstr)
 - isalpha
 - isdigit
 - isalnum
@@ -183,3 +187,44 @@ My own library of useful functions in C.
 | Param. #1      	| La chaine de caractères à trimmer. |
 | Retour         	| La chaine de caractère “fraiche” trimmée ou bien une copie de s sinon. |
 | Fonctions libc 	| malloc(3)	|
+
+----------
+
+| Function       	|  <a name="ft_strsplit">ft_strsplit</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| char ** ft_strsplit(char const *s, char c); |
+| Description    	| Alloue (avec malloc(3)) et retourne un tableau de chaines de caractères “fraiches” (toutes terminées par un ’\0’, le tableau également donc) résultant de la découpe de s selon le caractère c. Si l’allocation echoue, la fonction retourne NULL. Exemple : ft_strsplit("*salut*les***etudiants*", ’*’) renvoie le tableau ["salut", "les", "etudiants"]. |
+| Param. #1      	| La chaine de caractères à découper. |
+| Param. #2      	| Le caractère selon lequel découper la chaine. |
+| Retour         	| Le tableau de chaines de caractères “fraiches” résultant de la découpe. |
+| Fonctions libc 	| malloc(3), free(3)	|
+
+----------
+
+| Function       	|  <a name="ft_itoa">ft_itoa</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| char * ft_itoa(int n); |
+| Description    	| Alloue (avec malloc(3)) et retourne une chaine de caractères “fraiche” terminée par un ’\0’ représentant l’entier n passé en paramètre. Les nombres négatifs doivent être gérés. Si l’allocation échoue, la fonction renvoie NULL. |
+| Param. #1      	| L’entier à convertir en une chaine de caractères. |
+| Retour         	| La chaine de caractères représentant l’entier passé en paramètre. |
+| Fonctions libc 	| malloc(3)	|
+
+----------
+
+| Function       	|  <a name="ft_putchar">ft_putchar</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| void ft_putchar(char c); |
+| Description    	| Affiche le caractère c sur la sortie standard. |
+| Param. #1      	| Le caractères à afficher. |
+| Retour         	| Rien. |
+| Fonctions libc 	| write(2)	|
+
+----------
+
+| Function       	|  <a name="ft_putstr">ft_putstr</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| void ft_putstr(char const *s); |
+| Description    	| Affiche la chaine s sur la sortie standard. |
+| Param. #1      	| La chaine de caractères à afficher. |
+| Retour         	| Rien. |
+| Fonctions libc 	| write(2)	|
