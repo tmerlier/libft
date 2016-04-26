@@ -30,6 +30,12 @@ My own library of useful functions in C.
 - strnstr
 - strcmp
 - strncmp
+- [strmap] (#ft_strmap)
+- [strmapi] (#ft_strmapi)
+- [strnequ] (#ft_strnequ)
+- [strsub] (#ft_strsub)
+- [strjoin] (#ft_strjoin)
+- [strtrim] (#ft_strtrim)
 - atoi
 - isalpha
 - isdigit
@@ -110,3 +116,70 @@ My own library of useful functions in C.
 | Param. #2      	| La fonction à appeler sur chaque caractère de s et son index.  |
 | Retour         	| Rien.	|
 | Fonctions libc 	| Aucune	|
+
+----------
+
+| Function       	|  <a name="ft_strmap">ft_strmap</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| char * ft_strmap(char const *s, char (*f)(char));  |
+| Description    	| Applique la fonction f à chaque caractère de la chaine de caractères passée en paramètre pour créer une nouvelle chaine “fraiche” (avec malloc(3)) résultant des applications successives de f.  |
+| Param. #1      	| La chaine de caractères sur laquelle itérer.  |
+| Param. #2      	| La fonction à appeler sur chaque caractère de s.  |
+| Retour         	| La chaine “fraiche” résultant des applications successives de f.	|
+| Fonctions libc 	| malloc(3)	|
+
+----------
+
+| Function       	|  <a name="ft_strmapi">ft_strmapi</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| char * ft_strmapi(char const *s, char (*f)(unsigned int, char));  |
+| Description    	| Applique la fonction f à chaque caractère de la chaine de caractères passée en paramètre en précisant son index pour créer une nouvelle chaine “fraiche” (avec malloc(3)) résultant des applications successives de f.  |
+| Param. #1      	| La chaine de caractères sur laquelle itérer.  |
+| Param. #2      	| La fonction à appeler sur chaque caractère de s en précisant son index.  |
+| Retour         	| La chaine “fraiche” résultant des applications successives de f.	|
+| Fonctions libc 	| malloc(3)	|
+
+----------
+
+| Function       	|  <a name="ft_strnequ">ft_strnequ</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| int ft_strnequ(char const *s1, char const *s2, size_t n);  |
+| Description    	| Compare lexicographiquement s1 et s2 jusqu’à n caractères maximum ou bien qu’un ’\0’ ait été rencontré. Si les deux chaines sont égales, la fonction retourne 1, ou 0 sinon.  |
+| Param. #1      	|  La première des deux chaines à comparer.  |
+| Param. #2      	|  La seconde des deux chaines à comparer.  |
+| Param. #3      	| Le nombre de caractères à comparer au maximum.  |
+| Retour         	| 1 ou 0 selon que les deux chaines sont égales ou non. |
+| Fonctions libc 	| Aucune.	|
+
+----------
+
+| Function       	|  <a name="ft_strsub">ft_strsub</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| char * ft_strsub(char const *s, unsigned int start, size_t len); |
+| Description    	| Alloue (avec malloc(3)) et retourne la copie “fraiche” d’un tronçon de la chaine de caractères passée en paramètre. Le tronçon commence à l’index start et à pour longueur len. Si start et len ne désignent pas un tronçon de chaine valide, le comportement est indéterminé. Si l’allocation échoue, la fonction renvoie NULL. |
+| Param. #1      	| La chaine de caractères dans laquelle chercher le tronçon à copier. |
+| Param. #2      	| L’index dans la chaine de caractères où débute le tronçon à copier. |
+| Param. #3      	| La longueur du tronçon à copier. |
+| Retour         	| Le tronçon. |
+| Fonctions libc 	| malloc(3)	|
+
+----------
+
+| Function       	|  <a name="ft_strjoin">ft_strjoin</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| char * ft_strjoin(char const *s1, char const *s2); |
+| Description    	| Alloue (avec malloc(3)) et retourne une chaine de caractères “fraiche” terminée par un ’\0’ résultant de la concaténation de s1 et s2. Si l’allocation echoue, la fonction renvoie NULL. |
+| Param. #1      	| La chaine de caractères préfixe. |
+| Param. #2      	| La chaine de caractères suffixe. |
+| Retour         	| La chaine de caractère “fraiche” résultant de la concaténation des deux chaines. |
+| Fonctions libc 	| malloc(3)	|
+
+----------
+
+| Function       	|  <a name="ft_strtrim">ft_strtrim</a> 	|
+|----------------	|---------------------------------------	|
+| Prototype      	| char * ft_strtrim(char const *s); |
+| Description    	| Alloue (avec malloc(3)) et retourne une copie de la chaine passée en paramètre sans les espaces blancs au debut et à la fin de cette chaine. On considère comme espaces blancs les caractères ’ ’, ’\n’ et ’\t’. Si s ne contient pas d’espaces blancs au début ou à la fin, la fonction renvoie une copie de s. Si l’allocation echoue, la fonction renvoie NULL. |
+| Param. #1      	| La chaine de caractères à trimmer. |
+| Retour         	| La chaine de caractère “fraiche” trimmée ou bien une copie de s sinon. |
+| Fonctions libc 	| malloc(3)	|
